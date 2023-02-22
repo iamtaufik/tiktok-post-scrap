@@ -5,6 +5,9 @@ const { Client, LocalAuth } = require('whatsapp-web.js');
 require('dotenv').config();
 const client = new Client({
   authStrategy: new LocalAuth(),
+  puppeteer: {
+    args: ['--no-sandbox'],
+  },
 });
 
 async function scrapAllPosts() {
